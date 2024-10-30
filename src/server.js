@@ -15,6 +15,10 @@ app.use("/restautant.com/v1/api", apiRoutes);
 
 connectDB();
 
+app.use((req, res) => {
+  return res.send("404 not found");
+});
+
 let port = process.env.PORT || 8000;
 app.listen(port, () => {
   console.log("Backend Nodejs is running on the port: " + port);
